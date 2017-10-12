@@ -28,6 +28,11 @@ public class Hotel {
         this.reservations = new ArrayList<Reservation>();
     }
 
+    public Hotel(String name) {
+        this.name = name;
+        this.reservations = new ArrayList<Reservation>();
+    }
+
     public Integer getId() {
         return (int) id;
     }
