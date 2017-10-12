@@ -9,8 +9,8 @@ public class Reservation {
     
     private Calendar date;
 
-    public long getId() {
-        return id;
+    public Integer getId() {
+        return (int) id;
     }
 
     public void setId(long id) {
@@ -31,6 +31,16 @@ public class Reservation {
 
     public void setDate(Calendar date) {
         this.date = date;
+    }
+
+    public Reservation getHotel() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    public Integer getValue() {
+        // TODO Auto-generated method stub
+        return null;
     }
     
 }

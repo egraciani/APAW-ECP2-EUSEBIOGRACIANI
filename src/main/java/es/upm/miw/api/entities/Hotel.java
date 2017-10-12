@@ -28,8 +28,8 @@ public class Hotel {
         this.reservations = new ArrayList<Reservation>();
     }
 
-    public long getId() {
-        return id;
+    public Integer getId() {
+        return (int) id;
     }
 
     public void setId(long id) {
