@@ -6,5 +6,6 @@ import es.upm.miw.api.entities.Reservation;
 
 public interface ReservationDao extends GenericDao<Reservation, Integer> {
 
-    List<Integer> findValueByThemeId(int themeId);
+    List<Integer> findValueByHotelId(int hotelId);
+    
 }

@@ -24,4 +24,9 @@ public abstract class DaoFactory {
         return null;
     }
 
+    public Object getReservationDao() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

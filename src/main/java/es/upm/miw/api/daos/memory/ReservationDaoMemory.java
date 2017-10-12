@@ -24,7 +24,7 @@ public class ReservationDaoMemory extends GenericDaoMemory<Reservation> implemen
     }
 
     @Override
-    public List<Integer> findValueByThemeId(int hotelId) {
+    public List<Integer> findValueByHotelId(int hotelId) {
         List<Reservation> reservations = this.findAll();
         List<Integer> reservationsValue = new ArrayList<>();
         for (Reservation reservation : reservations) {

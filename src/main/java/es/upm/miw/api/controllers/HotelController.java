@@ -24,8 +24,8 @@ public class HotelController {
         DaoFactory.getFactory().getHotelDao().create(new Hotel(hotelName));
     }
 
-    private boolean existThemeId(int themeId) {
-        return DaoFactory.getFactory().getThemeDao().read(themeId) != null;
+    private boolean existHotelId(int hotelId) {
+        return DaoFactory.getFactory().getHotelDao().read(hotelId) != null;
     }
 
     // java 8: con Optional se expresa que podría no encontrarse el valor, mejor que provocar null y mejor que provocar exception
@@ -48,7 +48,7 @@ public class HotelController {
 
     public Optional<HotelReservationListDto> hotelVotes(int hotelId) {
         if (existHotelId(hotelId)) {
-            List<Integer> reservationList = DaoFactory.getFactory().getReservationDao().findValueByThemeId(hotelId);
+            List<Integer> reservationList = DaoFactory.getFactory().getReservationDao().findValueByHotelId(hotelId);
             return Optional.of(new HotelReservationListDto(DaoFactory.getFactory().getHotelDao().read(hotelId), reservationList));
         } else {
             return Optional.empty();
