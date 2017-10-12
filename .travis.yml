@@ -8,9 +8,16 @@ branches:
 notifications:
   email:
     recipients:
-    - egracianihiguero@gmail.com
+    - j.bernal@upm.es
 script:
-#Test unitario y de integracion en develop
-- mvn clean verify --settings settings.xml
+# Calidad codigo: Sonarcloud
 - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify --settings settings.xml
 - mvn sonar:sonar -Dsonar.organization=egraciani-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=3911eaff3c62d11185eebff585e7e105ae5489fe --settings settings.xml
+# Unit Test & Integration Test
+- mvn verify --settings settings.xml
+# Deploy & Functional Testing
+- if [ $TRAVIS_TEST_RESULT == 0 ];
+     then  mvn verify -Ppreproduction --settings settings.xml; 
+     else  echo "ERRORES!!! ... se saltan los test de funcionalidad"; 
+  fi
+ 
